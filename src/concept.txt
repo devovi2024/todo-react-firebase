@@ -1,0 +1,5 @@
+
+
+State : State store property values that belongs to the component.
+
+Ref : Ref create muteable object. 

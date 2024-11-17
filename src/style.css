@@ -1,0 +1,633 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+
+
+
+
+.App {
+
+
+    display: flex;
+    flex-direction: row;
+    height: 130vh;
+    width: 100vw;
+    /* overflow: hidden; */
+  }
+  
+  .Sidebar {
+    background-color: rgb(152, 86, 213);
+    width: 50%; /* Set a width for the sidebar */
+  }
+  
+
+  
+  .Main {
+    background: url("./assets/background.jpg") no-repeat center center; /* Set background image and its position */
+    background-size: cover; /* Ensures the background image covers the entire container */
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    flex: 1;
+    /* padding: 20px;  */
+    height: 100vh; /* Ensures the container takes up full viewport height */
+    display: flex;
+
+    color: white; /* Optional: adjust text color for better contrast */
+}
+
+
+/* logo  */
+/* Logo container */
+.logo {
+  /* display: flex;               */
+   /* justify-items: center; */
+   /* align-items: center; */
+   /* justify-content: center; */
+   background-color: #ffffff; 
+  height: 8vh;       
+  margin-top: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+
+}
+.logo img {
+  /* max-width: 100%;  */
+  /* height: auto;          */
+  max-height: 80px;            
+}
+
+
+
+/* Optional: Add a hover effect to the logo */
+.logo img:hover {
+  opacity: 0.8;                /* Slightly fade the logo on hover */
+  transition: opacity 0.3s ease; /* Smooth transition effect */
+}
+
+
+.User {
+  display: flex;
+  color: antiquewhite;
+  gap: 2vh;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border: 1px solid #504545 ;
+}
+
+.Profile {
+  /* margin-top: 10vh; */
+  /* font-size: 2vh; */
+  font-size: 20px;
+  margin-top: 2vh;
+
+}
+
+
+
+
+/* AddnEw TOdo  */
+
+
+/* AddNewTodo Component Styling */
+/* .AddNewTodo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  background-color: #f0f4f8;
+} */
+
+/* Button Styling */
+.btn {
+  background-color: #4CAF50; /* Green color */
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 1vh;
+}
+
+.btn:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.btn:focus {
+  outline: none; /* Remove focus outline */
+}
+
+
+
+/* Modal Background Overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* height: 100%; */
+  height: 70vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure modal appears above other content */
+}
+
+/* Modal Container */
+.container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-out;
+  transform: translateY(-50px);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+
+
+.container .close-btn:hover {
+  color: #f44336; /* Red on hover */
+}
+
+/* Simple Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* style.css */
+
+.AddNewTodo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  background-color: #45a049;
+}
+
+.text h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #333;
+}
+
+.text input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.remind,
+.pick-day,
+.pick-time,
+.title,
+.pick-project {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+  font-size: 16px;
+}
+
+.remind p,
+.pick-day p,
+.pick-project p {
+  margin: 0;
+  color: #555;
+}
+
+.PickIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e7f3ff;
+  padding: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.pick-time {
+  justify-content: flex-start;
+}
+
+.Projects {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.project-active {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.project {
+  background-color: #f1f1f1;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.project:hover {
+  background-color: #eaeaea;
+}
+
+.cancel,
+.confirm {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.cancel .X {
+  cursor: pointer;
+  font-size: 24px;
+  color: #f00;
+}
+
+.confirm button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.confirm button:hover {
+  background-color: #0056b3;
+}
+
+.btn-close {
+  background-color: transparent;
+  color: #555;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.calender-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.sidebar {
+  background-color: #fff;
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.icon {
+  margin-right: 10px;
+  color: #1EC94C;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  cursor: pointer;
+  margin-left: 10px;
+  color: #333;
+}
+
+/* Calendar Items Section */
+.items {
+  margin-top: 20px;
+}
+
+.item {
+  background-color: #f9f9f9;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  font-size: 16px;
+  color: #333;
+}
+
+.item:hover {
+  background-color: #e8f4e8;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect for item */
+.item:hover {
+  background-color: #e8f4e8;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .calender-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .btns {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+
+  .items {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .btns {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+
+  .arrow {
+    margin-left: 0;
+  }
+
+  .item {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+
+
+
+
+
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.projects-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.sidebar {
+  background-color: #fff;
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.icon {
+  margin-right: 10px;
+  color: #1EC94C;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  cursor: pointer;
+  margin-left: 10px;
+  color: #333;
+}
+
+.edit {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.items {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.AddNewProjects {
+  background-color: #1EC94C;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.AddNewProjects:hover {
+  background-color: #17a34a;
+}
+/* General styles for the Project component */
+.Project {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 15px 20px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+}
+
+.Project:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the project name */
+.name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  flex-grow: 1;
+  word-wrap: break-word;
+}
+
+/* Button container styles */
+.btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Edit button styles */
+.edit-btns span {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  color: #007bff;
+  padding: 8px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-btns span:hover {
+  background-color: #007bff;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Total count styles */
+.total-count {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 20px;
+  text-align: center;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  .Project {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btns {
+    margin-top: 10px;
+    gap: 5px;
+  }
+}
+
+
+
+
+

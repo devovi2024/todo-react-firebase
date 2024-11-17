@@ -1,0 +1,49 @@
+
+
+
+Create Functional Component 
+------------------------------
+
+1.Sidebar Component 
+2. Calender Component
+3. Projects Component 
+4. 
+
+
+
+Modal 
+-------
+function Modal ({children})
+<div>
+    <div>
+        {children} // is props or props object 
+    </div>
+</div>
+
+=> 2nd div is children 
+
+
+
+-----------|
+Time and Picker 
+-----------|
+=> Date() javascript object 
+
+
+
+
+
+----------------------
+Install Mete 
+Install bootstrap icon 
+
+
+https://www.npmjs.com/package/@material-ui/pickers
+
+
+
+
+
+--------------
+Render an array 
+---------------
